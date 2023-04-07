@@ -1,23 +1,27 @@
 import { useState } from "react";
 import "./App.css";
-import axios from 'axios';
+import axios from "axios";
+import ListDetails from "./components/ListDetails";
 
 function App() {
   const [keyWord, setKeyWord] = useState("");
 
-  const api = "https://api.dictionaryapi.dev/api/v2/entries/en"
+  const [result, setResult] = useState(null);
+
+  const api = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
   async function handleSearch() {
     try {
       const res = await axios.get(`${api}/${keyWord}`);
-      console.log(res, 'res');
+      console.log(res, "res");
+      setResult(res.data[0]);
     } catch (e) {
-      console.log({ e })
+      console.log({ e });
     }
   }
 
   function handleClear() {
-    setKeyWord("")
+    setKeyWord("");
   }
 
   return (
@@ -29,6 +33,8 @@ function App() {
       <button className="button" type="submit" onClick={handleClear}>
         clear
       </button>
+
+      {result && <ListDetails {...{ result }} />}
     </div>
   );
 }
