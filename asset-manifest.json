@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/miniDictionary/static/css/main.85e45e0c.css",
+    "main.js": "/miniDictionary/static/js/main.2be6be91.js",
+    "index.html": "/miniDictionary/index.html",
+    "main.85e45e0c.css.map": "/miniDictionary/static/css/main.85e45e0c.css.map",
+    "main.2be6be91.js.map": "/miniDictionary/static/js/main.2be6be91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85e45e0c.css",
+    "static/js/main.2be6be91.js"
+  ]
+}
