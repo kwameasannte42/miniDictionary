@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import ListDetails from "./components/ListDetails";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [keyWord, setKeyWord] = useState("");
@@ -22,6 +23,7 @@ function App() {
 
   function handleClear() {
     setKeyWord("");
+    setResult(null);
   }
 
   return (
@@ -30,7 +32,12 @@ function App() {
       <button className="button" type="submit" onClick={handleSearch}>
         Search
       </button>
-      <button className="button" type="submit" onClick={handleClear}>
+      <button
+        disabled={!result}
+        className="button"
+        type="submit"
+        onClick={handleClear}
+      >
         clear
       </button>
 
